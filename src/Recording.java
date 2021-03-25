@@ -17,6 +17,6 @@ public abstract class Recording extends Item implements Vat25 {
 
     @Override
     public String toString(){
-        return String.format("* Recording { name=%S, artist=%S, year=%S, type=%S, condition=%S, original price=%S", name, artist, year, type, condition, price);
+        return String.format("* Recording { name=%S, artist=%S, year=%S, type=%S, condition=%S, original price=%S, price=%s, price+vat=%s", name, artist, year, type, condition, price, getPrice(), getPricePlusVat());
     }
 }

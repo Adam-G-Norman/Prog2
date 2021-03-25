@@ -19,8 +19,11 @@ public class Book extends Item implements Vat6 {
 
     @Override
     public String toString(){
-        return String.format("* Book { name=%S, author=%S, bound=%S, price=%S", name, author, bound, getPrice());
+        return String.format("* Book { name=%S, author=%S, bound=%S, price=%S, price+vat=%s", name, author, bound, getPrice(), getPricePlusVat());
     }
 
 
 }
+
+
+//TODO Testa Year.now().getValue()

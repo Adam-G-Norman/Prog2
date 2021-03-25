@@ -1,11 +1,16 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
+
 public class Order{
 
     private static long counter = 0;
     private final long orderNumber;
-    private final Item [] items;
+    private final List<Item> items = new ArrayList<>();
 
     public Order(Item ...items){
-        this.items = items;
+        this.items.addAll(Arrays.asList(items));
         counter++;
         orderNumber = counter;
     }
@@ -30,10 +35,6 @@ public class Order{
         String allItems = "";
         for (Item item : items){
             allItems += item;
-            if(item instanceof Recording){
-                allItems += String.format(" price=%S", item.getPrice());
-            }
-            allItems += String.format(" price+vat=%S", item.getPricePlusVat());
             allItems += "\n";
         }
 
